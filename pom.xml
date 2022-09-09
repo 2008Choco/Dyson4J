@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>wtf.choco</groupId>
+  <artifactId>Dyson4J</artifactId>
+  <version>1.0.0</version>
+
+  <name>${project.groupId}:${project.artifactId}</name>
+  <description>A Java library to assist in connecting to Dyson fans via MQTT messaging protocols.</description>
+  <url>https://github.com/2008Choco/Dyson4J</url>
+
+  <scm>
+    <connection>scm:git:git://github.com/2008Choco/Dyson4J.git</connection>
+    <developerConnection>scm:git:ssh://github.com:2008Choco/Dyson4J.git</developerConnection>
+    <url>http://github.com/2008Choco/Dyson4J</url>
+  </scm>
+  <issueManagement>
+    <system>GitHub</system>
+    <url>https://github.com/2008Choco/Dyson4J/issues</url>
+  </issueManagement>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>choco</id>
+      <name>Parker Hawke</name>
+      <email>hawkeboyz2@hotmail.com</email>
+      <roles><role>Author</role></roles>
+      <timezone>GMT-5</timezone> <!-- Eastern Time: Toronto, Ontario, Canada -->
+      <url>https://choco.wtf</url>
+    </developer>
+  </developers>
+
+  <distributionManagement>
+    <repository>
+      <id>choco-repository</id>
+      <url>http://repo.choco.wtf/releases</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
+    <java.version>17</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.4.1</version>
+        <configuration>
+          <links>
+            <link>https://docs.oracle.com/en/java/javase/18/docs/api/</link>
+            <link>https://javadoc.io/doc/org.jetbrains/annotations/23.0.0/</link>
+          </links>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <configLocation>checkstyle.xml</configLocation>
+          <failsOnError>true</failsOnError>
+        </configuration>
+        <executions>
+          <execution>
+            <id>validate</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>23.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.eclipse.paho</groupId>
+      <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+      <version>1.2.5</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.9.0</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.8.2</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
