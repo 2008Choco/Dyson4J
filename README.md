@@ -1,5 +1,5 @@
 # Dyson4J
-A Java library to assist in connecting to Dyson fans via MQTT messaging protocols. This library is mostly asynchronous and can be used to post state changes to the fan, as well as query environmental data from Dyson fan sensors.
+A Java library to assist in connecting to Dyson fans via MQTT messaging protocols. This library is mostly asynchronous and can be used to post state changes to the fan, as well as query environmental data from Dyson fan sensors. Dyson4J is compiled with Java 17, therefore your project must be compiled with at least Java 17 to use.
 
 Communication to a Dyson fan can only be accomplished over a local network as the Dyson REST API is not properly documented by Dyson and changes frequently.
 
@@ -10,7 +10,7 @@ The library is licensed under [MIT License](https://opensource.org/licenses/mit-
 - **Javadocs:** https://choco.wtf/javadocs/dyson4j
 
 ## Compile This Project
-This project uses Maven as a build system so that necessary dependencies are downloaded automatically. While use of Maven is advised to depend on this library, you may compile and test the library yourself via simple Maven commands. Maven obviously [must be installed](https://maven.apache.org/install.html) in order to commence a build.
+This project uses Maven as a build system so that necessary dependencies are downloaded automatically. A Java 17 JDK must also be installed. While use of Maven is advised to depend on this library, you may compile and test the library yourself via simple Maven commands. Maven obviously [must be installed](https://maven.apache.org/install.html) in order to commence a build.
 
 Firstly, clone the repository. In the root of the project, run the following command:
 ```
@@ -65,6 +65,7 @@ There are libraries to communicate with Dyson's MQTT servers, though some are ou
 
 ## Thanks
 - [Eclipse Paho](https://www.eclipse.org/paho/) for the awesome Java MQTT library.
+- [Google's GSON](https://github.com/google/gson) for the best Java JSON library there is.
 - [Jetbrains Annotations](https://github.com/JetBrains/java-annotations) for really neat API annotations.
 - [JUnit 5](https://junit.org/junit5/) for an unmatched Java unit testing library.
 - Various online articles and community-made documentation on numerous forums:
