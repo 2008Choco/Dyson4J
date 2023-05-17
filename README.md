@@ -50,7 +50,7 @@ repositories {
 }
 
 dependencies {
-     compileOnly "wtf.choco:Dyson4J:1.0.0"
+     implementation "wtf.choco:Dyson4J:1.0.0"
 }
 ```
 
